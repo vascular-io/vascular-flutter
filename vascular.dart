@@ -1,4 +1,5 @@
 export 'package:vascular_flutter/src/vascular/inbox.pb.dart';
+export 'package:vascular_flutter/src/vascular/message.pb.dart';
 
 import 'package:grpc/grpc.dart';
 import 'package:vascular_flutter/src/vascular/inbox.pbgrpc.dart';
@@ -16,8 +17,8 @@ class Vascular {
   Next _next;
 
   final channel = ClientChannel(
-    'api.vascular.io',
-    port: 3000,
+    'localhost',
+    port: 50051,
     options: ChannelOptions(
       credentials: ChannelCredentials.insecure(),
       codecRegistry:
@@ -120,6 +121,29 @@ class Vascular {
       ..messageId = messageId;
     try {
       var response = await stub.deleteMessage(request);
+      await channel.shutdown();
+      print('Vascular SDK received: ${response}');
+      return response.status;
+    } catch (e) {
+      throw("Error calling OpenMessages: $e");
+    }
+  }
+
+  Future<String> HandleSFMCMessage(String title, String body, MessageMedia media, List<MessageAction> actions, String metadata) async {
+    final stub = MessageClient(channel);
+    final messageData = MessageData();
+    messageData.title = title;
+    messageData.body = body;
+    messageData.media = media;
+    messageData.actions.addAll(actions);
+    messageData.metadata = metadata;
+
+    final request = CreateMessageRequest()
+    ..appKey = _apiKey
+    ..userId = _userId
+    ..message = messageData;
+    try {
+      var response = await stub.handleSFMCMessage(request);
       await channel.shutdown();
       print('Vascular SDK received: ${response}');
       return response.status;
