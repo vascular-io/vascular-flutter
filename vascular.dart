@@ -5,6 +5,7 @@ import 'package:grpc/grpc.dart';
 import 'package:vascular_flutter/src/vascular/inbox.pbgrpc.dart';
 import 'package:vascular_flutter/src/vascular/message.pbgrpc.dart';
 import 'package:vascular_flutter/src/vascular/user.pbgrpc.dart';
+import 'package:vascular_flutter/src/vascular/tag.pbgrpc.dart';
 
 Vascular initializeApp(String appKey, String userId) {
   final inbox = new Vascular(appKey, userId);
@@ -17,7 +18,7 @@ class Vascular {
   Next _next;
 
   final channel = ClientChannel(
-    'localhost',
+    'api.vascular.io',
     port: 50051,
     options: ChannelOptions(
       credentials: ChannelCredentials.insecure(),
@@ -43,22 +44,21 @@ class Vascular {
     }
   }
 
-  Future<GetInboxMessagesReply> GetInbox() async {
+  Future<GetInboxMessagesReply> Inbox() async {
     final stub = InboxClient(channel);
     final request = GetInboxMessagesRequest()
       ..userId = _userId
       ..appKey = _apiKey;
     try {
       final msgs = await stub.getInboxMessages(request);
-      // await channel.shutdown();
       _next = msgs.next;
       return msgs;
     } catch (e) {
-      throw("Error calling GetInbox: $e");
+      throw("Error calling Inbox: $e");
     }
   }
 
-  Future<GetInboxMessagesReply> GetInboxNext() async {
+  Future<GetInboxMessagesReply> InboxNext() async {
     if (_next == null) {
       return null;
     }
@@ -77,7 +77,7 @@ class Vascular {
 
       return msgs;
     } catch (e) {
-       throw("Error calling GetInboxNext: $e");
+       throw("Error calling InboxNext: $e");
     }
   }
 
@@ -89,7 +89,6 @@ class Vascular {
       ..ids.addAll(messagesIds);
     try {
       var response = await stub.readMessages(request);
-      await channel.shutdown();
       print('Vascular SDK received: ${response}');
       return response.status;
     } catch (e) {
@@ -105,7 +104,6 @@ class Vascular {
       ..ids.addAll(messagesIds);
     try {
       var response = await stub.openMessages(request);
-      await channel.shutdown();
       print('Vascular SDK received: ${response}');
       return response.status;
     } catch (e) {
@@ -121,11 +119,10 @@ class Vascular {
       ..messageId = messageId;
     try {
       var response = await stub.deleteMessage(request);
-      await channel.shutdown();
       print('Vascular SDK received: ${response}');
       return response.status;
     } catch (e) {
-      throw("Error calling OpenMessages: $e");
+      throw("Error calling DeleteMessage: $e");
     }
   }
 
@@ -144,12 +141,75 @@ class Vascular {
     ..message = messageData;
     try {
       var response = await stub.handleSFMCMessage(request);
-      await channel.shutdown();
       print('Vascular SDK received: ${response}');
       return response.status;
     } catch (e) {
-      throw("Error calling OpenMessages: $e");
+      throw("Error calling HandleSFMCMessage: $e");
+    }
+  }
+
+  Future<String> AddTags(List<String> tags) async {
+    final stub = TagClient(channel);
+    final request = AddTagsRequest()
+      ..appKey = _apiKey
+      ..userId = _userId
+      ..names.addAll(tags);
+    try {
+      var response = await stub.addTags(request);
+      print('Vascular SDK received: ${response}');
+      return response.status;
+    } catch (e) {
+      throw("Error calling AddTags: $e");
+    }
+
+  }
+
+  Future<String> DeleteTags(List<String> tags) async {
+    List<String> uuids = [];
+    final userTags = await Tags();
+    tags.forEach((tag) {
+      var uuid = tagExist(userTags, tag);
+      if(!uuid.isEmpty) {
+        uuids.add(uuid);
+      }
+    });
+    if (uuids.length == 0) {
+      return "Nothing to delete";
+    }
+    final stub = TagClient(channel);
+    final request = DeleteTagsRequest()
+    ..appKey = _apiKey
+    ..userId = _userId
+    ..uuids.addAll(uuids);
+    try {
+      var response = await stub.deleteTags(request);
+      print('Vascular SDK received: ${response}');
+      return response.status;
+    } catch (e) {
+      throw("Error calling DeleteTags: $e");
+    }
+  }
+
+  Future<List<TagData>> Tags() async {
+    final stub = TagClient(channel);
+    final request = GetUserTagsRequest()
+      ..appKey = _apiKey
+      ..userId = _userId;
+    try {
+      var response = await stub.getUserTags(request);
+      print('Vascular SDK received: ${response}');
+      return response.tags;
+    } catch (e) {
+      throw("Error calling Tags: $e");
     }
   }
 }
 
+String tagExist(List<TagData> userTags, String tag) {
+  for (var i = 0; i < userTags.length; i++) {
+    if (userTags[i].name == tag) {
+      return userTags[i].uuid;
+    }
+  }
+  return "";
+}

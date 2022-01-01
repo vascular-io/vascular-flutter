@@ -26,14 +26,15 @@ const CreateInboxMessagesRequest$json = const {
   '1': 'CreateInboxMessagesRequest',
   '2': const [
     const {'1': 'app_key', '3': 1, '4': 1, '5': 9, '10': 'appKey'},
-    const {'1': 'app_id', '3': 2, '4': 1, '5': 9, '10': 'appId'},
-    const {'1': 'user_id', '3': 3, '4': 1, '5': 9, '10': 'userId'},
-    const {'1': 'hw_id', '3': 4, '4': 1, '5': 9, '10': 'hwId'},
+    const {'1': 'api_key', '3': 2, '4': 1, '5': 9, '10': 'apiKey'},
+    const {'1': 'app_id', '3': 3, '4': 1, '5': 9, '10': 'appId'},
+    const {'1': 'user_id', '3': 4, '4': 1, '5': 9, '10': 'userId'},
+    const {'1': 'hw_id', '3': 5, '4': 1, '5': 9, '10': 'hwId'},
   ],
 };
 
 /// Descriptor for `CreateInboxMessagesRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List createInboxMessagesRequestDescriptor = $convert.base64Decode('ChpDcmVhdGVJbmJveE1lc3NhZ2VzUmVxdWVzdBIXCgdhcHBfa2V5GAEgASgJUgZhcHBLZXkSFQoGYXBwX2lkGAIgASgJUgVhcHBJZBIXCgd1c2VyX2lkGAMgASgJUgZ1c2VySWQSEwoFaHdfaWQYBCABKAlSBGh3SWQ=');
+final $typed_data.Uint8List createInboxMessagesRequestDescriptor = $convert.base64Decode('ChpDcmVhdGVJbmJveE1lc3NhZ2VzUmVxdWVzdBIXCgdhcHBfa2V5GAEgASgJUgZhcHBLZXkSFwoHYXBpX2tleRgCIAEoCVIGYXBpS2V5EhUKBmFwcF9pZBgDIAEoCVIFYXBwSWQSFwoHdXNlcl9pZBgEIAEoCVIGdXNlcklkEhMKBWh3X2lkGAUgASgJUgRod0lk');
 @$core.Deprecated('Use getInboxMessagesReplyDescriptor instead')
 const GetInboxMessagesReply$json = const {
   '1': 'GetInboxMessagesReply',

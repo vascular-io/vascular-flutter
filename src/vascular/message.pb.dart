@@ -11,8 +11,8 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 import 'google/protobuf/timestamp.pb.dart' as $1;
 
-class CreateMessageRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CreateMessageRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'vascularinbox.message'), createEmptyInstance: create)
+class CreateSFMCMessageRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CreateSFMCMessageRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'vascularinbox.message'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'appKey')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId')
     ..aOM<MessageData>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'message', subBuilder: MessageData.create)
@@ -20,8 +20,8 @@ class CreateMessageRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false
   ;
 
-  CreateMessageRequest._() : super();
-  factory CreateMessageRequest({
+  CreateSFMCMessageRequest._() : super();
+  factory CreateSFMCMessageRequest({
     $core.String? appKey,
     $core.String? userId,
     MessageData? message,
@@ -30,6 +30,104 @@ class CreateMessageRequest extends $pb.GeneratedMessage {
     final _result = create();
     if (appKey != null) {
       _result.appKey = appKey;
+    }
+    if (userId != null) {
+      _result.userId = userId;
+    }
+    if (message != null) {
+      _result.message = message;
+    }
+    if (expdate != null) {
+      _result.expdate = expdate;
+    }
+    return _result;
+  }
+  factory CreateSFMCMessageRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreateSFMCMessageRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CreateSFMCMessageRequest clone() => CreateSFMCMessageRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CreateSFMCMessageRequest copyWith(void Function(CreateSFMCMessageRequest) updates) => super.copyWith((message) => updates(message as CreateSFMCMessageRequest)) as CreateSFMCMessageRequest; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static CreateSFMCMessageRequest create() => CreateSFMCMessageRequest._();
+  CreateSFMCMessageRequest createEmptyInstance() => create();
+  static $pb.PbList<CreateSFMCMessageRequest> createRepeated() => $pb.PbList<CreateSFMCMessageRequest>();
+  @$core.pragma('dart2js:noInline')
+  static CreateSFMCMessageRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateSFMCMessageRequest>(create);
+  static CreateSFMCMessageRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get appKey => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set appKey($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasAppKey() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAppKey() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  MessageData get message => $_getN(2);
+  @$pb.TagNumber(3)
+  set message(MessageData v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasMessage() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMessage() => clearField(3);
+  @$pb.TagNumber(3)
+  MessageData ensureMessage() => $_ensure(2);
+
+  @$pb.TagNumber(4)
+  $1.Timestamp get expdate => $_getN(3);
+  @$pb.TagNumber(4)
+  set expdate($1.Timestamp v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasExpdate() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearExpdate() => clearField(4);
+  @$pb.TagNumber(4)
+  $1.Timestamp ensureExpdate() => $_ensure(3);
+}
+
+class CreateMessageRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CreateMessageRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'vascularinbox.message'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'appKey')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'apiKey')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId')
+    ..aOM<MessageData>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'message', subBuilder: MessageData.create)
+    ..aOM<$1.Timestamp>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'expdate', subBuilder: $1.Timestamp.create)
+    ..hasRequiredFields = false
+  ;
+
+  CreateMessageRequest._() : super();
+  factory CreateMessageRequest({
+    $core.String? appKey,
+    $core.String? apiKey,
+    $core.String? userId,
+    MessageData? message,
+    $1.Timestamp? expdate,
+  }) {
+    final _result = create();
+    if (appKey != null) {
+      _result.appKey = appKey;
+    }
+    if (apiKey != null) {
+      _result.apiKey = apiKey;
     }
     if (userId != null) {
       _result.userId = userId;
@@ -73,49 +171,60 @@ class CreateMessageRequest extends $pb.GeneratedMessage {
   void clearAppKey() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get userId => $_getSZ(1);
+  $core.String get apiKey => $_getSZ(1);
   @$pb.TagNumber(2)
-  set userId($core.String v) { $_setString(1, v); }
+  set apiKey($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasUserId() => $_has(1);
+  $core.bool hasApiKey() => $_has(1);
   @$pb.TagNumber(2)
-  void clearUserId() => clearField(2);
+  void clearApiKey() => clearField(2);
 
   @$pb.TagNumber(3)
-  MessageData get message => $_getN(2);
+  $core.String get userId => $_getSZ(2);
   @$pb.TagNumber(3)
-  set message(MessageData v) { setField(3, v); }
+  set userId($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasMessage() => $_has(2);
+  $core.bool hasUserId() => $_has(2);
   @$pb.TagNumber(3)
-  void clearMessage() => clearField(3);
-  @$pb.TagNumber(3)
-  MessageData ensureMessage() => $_ensure(2);
+  void clearUserId() => clearField(3);
 
   @$pb.TagNumber(4)
-  $1.Timestamp get expdate => $_getN(3);
+  MessageData get message => $_getN(3);
   @$pb.TagNumber(4)
-  set expdate($1.Timestamp v) { setField(4, v); }
+  set message(MessageData v) { setField(4, v); }
   @$pb.TagNumber(4)
-  $core.bool hasExpdate() => $_has(3);
+  $core.bool hasMessage() => $_has(3);
   @$pb.TagNumber(4)
-  void clearExpdate() => clearField(4);
+  void clearMessage() => clearField(4);
   @$pb.TagNumber(4)
-  $1.Timestamp ensureExpdate() => $_ensure(3);
+  MessageData ensureMessage() => $_ensure(3);
+
+  @$pb.TagNumber(5)
+  $1.Timestamp get expdate => $_getN(4);
+  @$pb.TagNumber(5)
+  set expdate($1.Timestamp v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasExpdate() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearExpdate() => clearField(5);
+  @$pb.TagNumber(5)
+  $1.Timestamp ensureExpdate() => $_ensure(4);
 }
 
 class CreateMessagesRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CreateMessagesRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'vascularinbox.message'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'appKey')
-    ..pPS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'usersId')
-    ..aOM<MessageData>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'messages', subBuilder: MessageData.create)
-    ..aOM<$1.Timestamp>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'expdate', subBuilder: $1.Timestamp.create)
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'apiKey')
+    ..pPS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'usersId')
+    ..aOM<MessageData>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'messages', subBuilder: MessageData.create)
+    ..aOM<$1.Timestamp>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'expdate', subBuilder: $1.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
   CreateMessagesRequest._() : super();
   factory CreateMessagesRequest({
     $core.String? appKey,
+    $core.String? apiKey,
     $core.Iterable<$core.String>? usersId,
     MessageData? messages,
     $1.Timestamp? expdate,
@@ -123,6 +232,9 @@ class CreateMessagesRequest extends $pb.GeneratedMessage {
     final _result = create();
     if (appKey != null) {
       _result.appKey = appKey;
+    }
+    if (apiKey != null) {
+      _result.apiKey = apiKey;
     }
     if (usersId != null) {
       _result.usersId.addAll(usersId);
@@ -166,29 +278,38 @@ class CreateMessagesRequest extends $pb.GeneratedMessage {
   void clearAppKey() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.List<$core.String> get usersId => $_getList(1);
+  $core.String get apiKey => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set apiKey($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasApiKey() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearApiKey() => clearField(2);
 
   @$pb.TagNumber(3)
-  MessageData get messages => $_getN(2);
-  @$pb.TagNumber(3)
-  set messages(MessageData v) { setField(3, v); }
-  @$pb.TagNumber(3)
-  $core.bool hasMessages() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearMessages() => clearField(3);
-  @$pb.TagNumber(3)
-  MessageData ensureMessages() => $_ensure(2);
+  $core.List<$core.String> get usersId => $_getList(2);
 
   @$pb.TagNumber(4)
-  $1.Timestamp get expdate => $_getN(3);
+  MessageData get messages => $_getN(3);
   @$pb.TagNumber(4)
-  set expdate($1.Timestamp v) { setField(4, v); }
+  set messages(MessageData v) { setField(4, v); }
   @$pb.TagNumber(4)
-  $core.bool hasExpdate() => $_has(3);
+  $core.bool hasMessages() => $_has(3);
   @$pb.TagNumber(4)
-  void clearExpdate() => clearField(4);
+  void clearMessages() => clearField(4);
   @$pb.TagNumber(4)
-  $1.Timestamp ensureExpdate() => $_ensure(3);
+  MessageData ensureMessages() => $_ensure(3);
+
+  @$pb.TagNumber(5)
+  $1.Timestamp get expdate => $_getN(4);
+  @$pb.TagNumber(5)
+  set expdate($1.Timestamp v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasExpdate() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearExpdate() => clearField(5);
+  @$pb.TagNumber(5)
+  $1.Timestamp ensureExpdate() => $_ensure(4);
 }
 
 class ChangeMessagesStateRequest extends $pb.GeneratedMessage {

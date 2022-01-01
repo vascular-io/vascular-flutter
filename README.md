@@ -37,7 +37,7 @@ final vascularApp = initializeApp(
 vascularApp.CreateUser();
 
 // Inbox
-final inbox = await vascularApp.GetInbox();
+final inbox = await vascularApp.Inbox();
 
 // Read
 vascularApp.ReadMessages(inbox.newMessagesIds);
@@ -47,6 +47,15 @@ vascularApp.OpenMessages(inbox.readMessagesIds);
 
 // Delete
 vascularApp.DeleteMessage(inbox.messages[0].uuid);
+
+// Add tags
+vascularApp.AddTags(["music", "sport"]);
+
+// Delete tags
+vascularApp.DeleteTags(["music", "sport"]);
+
+// List Tags
+vascularApp.Tags();
 
 
 

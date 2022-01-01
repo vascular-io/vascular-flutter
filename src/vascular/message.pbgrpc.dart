@@ -15,9 +15,9 @@ export 'message.pb.dart';
 
 class MessageClient extends $grpc.Client {
   static final _$handleSFMCMessage =
-      $grpc.ClientMethod<$0.CreateMessageRequest, $0.MessageReply>(
+      $grpc.ClientMethod<$0.CreateSFMCMessageRequest, $0.MessageReply>(
           '/vascularinbox.message.Message/HandleSFMCMessage',
-          ($0.CreateMessageRequest value) => value.writeToBuffer(),
+          ($0.CreateSFMCMessageRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.MessageReply.fromBuffer(value));
   static final _$handleAPIMessage =
       $grpc.ClientMethod<$0.CreateMessageRequest, $0.MessageReply>(
@@ -52,7 +52,7 @@ class MessageClient extends $grpc.Client {
       : super(channel, options: options, interceptors: interceptors);
 
   $grpc.ResponseFuture<$0.MessageReply> handleSFMCMessage(
-      $0.CreateMessageRequest request,
+      $0.CreateSFMCMessageRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$handleSFMCMessage, request, options: options);
   }
@@ -92,14 +92,15 @@ abstract class MessageServiceBase extends $grpc.Service {
   $core.String get $name => 'vascularinbox.message.Message';
 
   MessageServiceBase() {
-    $addMethod($grpc.ServiceMethod<$0.CreateMessageRequest, $0.MessageReply>(
-        'HandleSFMCMessage',
-        handleSFMCMessage_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) =>
-            $0.CreateMessageRequest.fromBuffer(value),
-        ($0.MessageReply value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$0.CreateSFMCMessageRequest, $0.MessageReply>(
+            'HandleSFMCMessage',
+            handleSFMCMessage_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $0.CreateSFMCMessageRequest.fromBuffer(value),
+            ($0.MessageReply value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.CreateMessageRequest, $0.MessageReply>(
         'HandleAPIMessage',
         handleAPIMessage_Pre,
@@ -146,7 +147,7 @@ abstract class MessageServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.MessageReply> handleSFMCMessage_Pre($grpc.ServiceCall call,
-      $async.Future<$0.CreateMessageRequest> request) async {
+      $async.Future<$0.CreateSFMCMessageRequest> request) async {
     return handleSFMCMessage(call, await request);
   }
 
@@ -177,7 +178,7 @@ abstract class MessageServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.MessageReply> handleSFMCMessage(
-      $grpc.ServiceCall call, $0.CreateMessageRequest request);
+      $grpc.ServiceCall call, $0.CreateSFMCMessageRequest request);
   $async.Future<$0.MessageReply> handleAPIMessage(
       $grpc.ServiceCall call, $0.CreateMessageRequest request);
   $async.Future<$0.HandleAPIMessagesReply> handleAPIMessages(

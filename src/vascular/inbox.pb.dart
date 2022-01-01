@@ -103,15 +103,17 @@ class GetInboxMessagesRequest extends $pb.GeneratedMessage {
 class CreateInboxMessagesRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CreateInboxMessagesRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'vascularinbox.inbox'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'appKey')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'appId')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId')
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'hwId')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'apiKey')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'appId')
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId')
+    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'hwId')
     ..hasRequiredFields = false
   ;
 
   CreateInboxMessagesRequest._() : super();
   factory CreateInboxMessagesRequest({
     $core.String? appKey,
+    $core.String? apiKey,
     $core.String? appId,
     $core.String? userId,
     $core.String? hwId,
@@ -119,6 +121,9 @@ class CreateInboxMessagesRequest extends $pb.GeneratedMessage {
     final _result = create();
     if (appKey != null) {
       _result.appKey = appKey;
+    }
+    if (apiKey != null) {
+      _result.apiKey = apiKey;
     }
     if (appId != null) {
       _result.appId = appId;
@@ -162,31 +167,40 @@ class CreateInboxMessagesRequest extends $pb.GeneratedMessage {
   void clearAppKey() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get appId => $_getSZ(1);
+  $core.String get apiKey => $_getSZ(1);
   @$pb.TagNumber(2)
-  set appId($core.String v) { $_setString(1, v); }
+  set apiKey($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasAppId() => $_has(1);
+  $core.bool hasApiKey() => $_has(1);
   @$pb.TagNumber(2)
-  void clearAppId() => clearField(2);
+  void clearApiKey() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get userId => $_getSZ(2);
+  $core.String get appId => $_getSZ(2);
   @$pb.TagNumber(3)
-  set userId($core.String v) { $_setString(2, v); }
+  set appId($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasUserId() => $_has(2);
+  $core.bool hasAppId() => $_has(2);
   @$pb.TagNumber(3)
-  void clearUserId() => clearField(3);
+  void clearAppId() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get hwId => $_getSZ(3);
+  $core.String get userId => $_getSZ(3);
   @$pb.TagNumber(4)
-  set hwId($core.String v) { $_setString(3, v); }
+  set userId($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasHwId() => $_has(3);
+  $core.bool hasUserId() => $_has(3);
   @$pb.TagNumber(4)
-  void clearHwId() => clearField(4);
+  void clearUserId() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get hwId => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set hwId($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasHwId() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearHwId() => clearField(5);
 }
 
 class GetInboxMessagesReply extends $pb.GeneratedMessage {
