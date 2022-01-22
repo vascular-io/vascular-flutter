@@ -74,7 +74,7 @@ Widget build(BuildContext context) {
                     children: <Widget>[
                         TextButton(
                         onPressed: () {
-                            vascular.GetInboxNext();
+                            vascular.InboxNext();
                         },
                         child: Text('TextButton'),
                         ),
