@@ -39,6 +39,10 @@ vascular.CreateUser();
 // Inbox
 final inbox = await vascular.Inbox();
 
+// Next inbox (pagination)
+
+final inbox = vascular.InboxNext();
+
 // Read
 vascular.ReadMessages(inbox.newMessagesIds);
 
