@@ -1,16 +1,15 @@
 name: vascular_flutter
 description: "The Vascular flutter plugin. This package implements a cross-platform plugin interface to vascular's iOS and Android native SDKs. This allows core Vascular functionality to be implemented by Flutter apps written in dart. The available core Vascular functionality currently includes: message center, and user manager."
-
-version: 0.0.2
+version: 0.0.4
+homepage: http://www.vascular.io/
+repository: https://github.com/vascular-io/vascular-flutter
 
 environment:
-  sdk: '>=2.10.0 <3.0.0'
-
-#dependencies:
-#  path: ^1.7.0
+  sdk: '>=2.12.0 <3.0.0'
 
 dependencies: 
   grpc: ^3.0.2
   protobuf: ^2.0.0
   async: ^2.5.0
+  fixnum: ^1.0.0
 
