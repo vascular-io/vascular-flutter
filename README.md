@@ -30,32 +30,36 @@ import 'package:vascular_flutter/vascular.dart';
 import 'package:vascular_flutter/vascular.dart';
 
 // initializeApp
-final vascularApp = initializeApp(
+final vascular = initializeApp(
     APP_KEY, USER_ID);
 
 // User
-vascularApp.CreateUser();
+vascular.CreateUser();
 
 // Inbox
-final inbox = await vascularApp.Inbox();
+final inbox = await vascular.Inbox();
+
+// Next inbox (pagination)
+
+final inbox = await vascular.InboxNext();
 
 // Read
-vascularApp.ReadMessages(inbox.newMessagesIds);
+vascular.ReadMessages(inbox.newMessagesIds);
 
 // Open 
-vascularApp.OpenMessages(inbox.readMessagesIds);
+vascular.OpenMessages(inbox.readMessagesIds);
 
 // Delete
-vascularApp.DeleteMessage(inbox.messages[0].uuid);
+vascular.DeleteMessage(inbox.messages[0].uuid);
 
 // Add tags
-vascularApp.AddTags(["music", "sport"]);
+vascular.AddTags(["music", "sport"]);
 
 // Delete tags
-vascularApp.DeleteTags(["music", "sport"]);
+vascular.DeleteTags(["music", "sport"]);
 
 // List Tags
-vascularApp.Tags();
+vascular.Tags();
 
 
 
@@ -74,7 +78,7 @@ Widget build(BuildContext context) {
                     children: <Widget>[
                         TextButton(
                         onPressed: () {
-                            vascularApp.GetInboxNext();
+                            vascular.InboxNext();
                         },
                         child: Text('TextButton'),
                         ),
