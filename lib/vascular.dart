@@ -31,18 +31,42 @@ class Vascular {
 
 
 
-  Future<CreateUserReply> CreateUser() async {
+  Future<CreateUserReply> CreateUser({String userId}) async {
+    var usrId = userId;
+    if (userId == "" || userId == null) {
+      usrId = _userId;
+    }
     final stub = UserClient(channel);
     final request = CreateUserRequest()
-      ..userId = _userId
+      ..userId = usrId
       ..appKey = _apiKey;
     try {
       final user = await stub.createUser(request);
+      await channel.shutdown();
       return user;
     } catch (e) {
       throw("Error calling CreateUser: $e");
     }
   }
+
+  Future<GetUserReply> GetUser({String userId}) async {
+    var usrId = userId;
+    if (userId == "" || userId == null) {
+      usrId = _userId;
+    }
+    final stub = UserClient(channel);
+    final request = GetUserRequest()
+      ..userId = usrId
+      ..appKey = _apiKey;
+    try {
+      final user = await stub.getUser(request);
+      await channel.shutdown();
+      return user;
+    } catch (e) {
+      throw("Error calling GetUserRequest: $e");
+    }
+  }
+
 
   Future<GetInboxMessagesReply> Inbox() async {
     final stub = InboxClient(channel);
@@ -126,27 +150,6 @@ class Vascular {
     }
   }
 
-  Future<String> HandleSFMCMessage(String title, String body, MessageMedia media, List<MessageAction> actions, String metadata) async {
-    final stub = MessageClient(channel);
-    final messageData = MessageData();
-    messageData.title = title;
-    messageData.body = body;
-    messageData.media = media;
-    messageData.actions.addAll(actions);
-    messageData.metadata = metadata;
-
-    final request = CreateMessageRequest()
-    ..appKey = _apiKey
-    ..userId = _userId
-    ..message = messageData;
-    try {
-      var response = await stub.handleSFMCMessage(request);
-      print('Vascular SDK received: ${response}');
-      return response.status;
-    } catch (e) {
-      throw("Error calling HandleSFMCMessage: $e");
-    }
-  }
 
   Future<String> AddTags(List<String> tags) async {
     final stub = TagClient(channel);
@@ -156,6 +159,7 @@ class Vascular {
       ..names.addAll(tags);
     try {
       var response = await stub.addTags(request);
+      await channel.shutdown();
       print('Vascular SDK received: ${response}');
       return response.status;
     } catch (e) {
@@ -183,6 +187,7 @@ class Vascular {
     ..uuids.addAll(uuids);
     try {
       var response = await stub.deleteTags(request);
+      await channel.shutdown();
       print('Vascular SDK received: ${response}');
       return response.status;
     } catch (e) {

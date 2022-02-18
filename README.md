@@ -97,28 +97,3 @@ Widget build(BuildContext context) {
     );
 }
 ```
-
-###### Persist Sales force cloud messaging push (SFCM)
-
-```
-  try {
-    final media =  MessageMedia();
-    media.image = "http://vascular.io/image";
-    media.thumbnail = "http://vascular.io/thumbnail";
-
-    final firstAction =  MessageAction();
-    firstAction.name = "foo1";
-    firstAction.value = "bar1";
-
-    final secondAction =  MessageAction();
-    secondAction.name = "foo2";
-    secondAction.value = "bar2";
-
-    List<MessageAction> actions = [firstAction, secondAction];
-    vascular.HandleSFMCMessage(
-        "This a title", "A body", media, actions, "{\n\"foo\": \"bar\"\n\n}");
-  } catch (error) {
-    print('Error handle sfmc: ${error}');
-  }
-```
-

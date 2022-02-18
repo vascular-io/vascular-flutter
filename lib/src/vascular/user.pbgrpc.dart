@@ -20,6 +20,11 @@ class UserClient extends $grpc.Client {
           ($0.CreateUserRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $0.CreateUserReply.fromBuffer(value));
+  static final _$getUser =
+      $grpc.ClientMethod<$0.GetUserRequest, $0.GetUserReply>(
+          '/vascularinbox.user.User/GetUser',
+          ($0.GetUserRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $0.GetUserReply.fromBuffer(value));
 
   UserClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -30,6 +35,11 @@ class UserClient extends $grpc.Client {
       $0.CreateUserRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createUser, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetUserReply> getUser($0.GetUserRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getUser, request, options: options);
   }
 }
 
@@ -44,6 +54,13 @@ abstract class UserServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.CreateUserRequest.fromBuffer(value),
         ($0.CreateUserReply value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetUserRequest, $0.GetUserReply>(
+        'GetUser',
+        getUser_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetUserRequest.fromBuffer(value),
+        ($0.GetUserReply value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.CreateUserReply> createUser_Pre($grpc.ServiceCall call,
@@ -51,6 +68,13 @@ abstract class UserServiceBase extends $grpc.Service {
     return createUser(call, await request);
   }
 
+  $async.Future<$0.GetUserReply> getUser_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.GetUserRequest> request) async {
+    return getUser(call, await request);
+  }
+
   $async.Future<$0.CreateUserReply> createUser(
       $grpc.ServiceCall call, $0.CreateUserRequest request);
+  $async.Future<$0.GetUserReply> getUser(
+      $grpc.ServiceCall call, $0.GetUserRequest request);
 }

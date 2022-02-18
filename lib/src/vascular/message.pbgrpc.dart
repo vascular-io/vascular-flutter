@@ -14,22 +14,16 @@ import 'message.pb.dart' as $0;
 export 'message.pb.dart';
 
 class MessageClient extends $grpc.Client {
-  static final _$handleSFMCMessage =
-      $grpc.ClientMethod<$0.CreateSFMCMessageRequest, $0.MessageReply>(
-          '/vascularinbox.message.Message/HandleSFMCMessage',
-          ($0.CreateSFMCMessageRequest value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) => $0.MessageReply.fromBuffer(value));
   static final _$handleAPIMessage =
       $grpc.ClientMethod<$0.CreateMessageRequest, $0.MessageReply>(
           '/vascularinbox.message.Message/HandleAPIMessage',
           ($0.CreateMessageRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.MessageReply.fromBuffer(value));
   static final _$handleAPIMessages =
-      $grpc.ClientMethod<$0.CreateMessagesRequest, $0.HandleAPIMessagesReply>(
+      $grpc.ClientMethod<$0.CreateMessagesRequest, $0.MessageReply>(
           '/vascularinbox.message.Message/HandleAPIMessages',
           ($0.CreateMessagesRequest value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) =>
-              $0.HandleAPIMessagesReply.fromBuffer(value));
+          ($core.List<$core.int> value) => $0.MessageReply.fromBuffer(value));
   static final _$deleteMessage =
       $grpc.ClientMethod<$0.DeleteMessageRequest, $0.MessageReply>(
           '/vascularinbox.message.Message/DeleteMessage',
@@ -51,19 +45,13 @@ class MessageClient extends $grpc.Client {
       $core.Iterable<$grpc.ClientInterceptor>? interceptors})
       : super(channel, options: options, interceptors: interceptors);
 
-  $grpc.ResponseFuture<$0.MessageReply> handleSFMCMessage(
-      $0.CreateSFMCMessageRequest request,
-      {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$handleSFMCMessage, request, options: options);
-  }
-
   $grpc.ResponseFuture<$0.MessageReply> handleAPIMessage(
       $0.CreateMessageRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$handleAPIMessage, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.HandleAPIMessagesReply> handleAPIMessages(
+  $grpc.ResponseFuture<$0.MessageReply> handleAPIMessages(
       $0.CreateMessagesRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$handleAPIMessages, request, options: options);
@@ -92,15 +80,6 @@ abstract class MessageServiceBase extends $grpc.Service {
   $core.String get $name => 'vascularinbox.message.Message';
 
   MessageServiceBase() {
-    $addMethod(
-        $grpc.ServiceMethod<$0.CreateSFMCMessageRequest, $0.MessageReply>(
-            'HandleSFMCMessage',
-            handleSFMCMessage_Pre,
-            false,
-            false,
-            ($core.List<$core.int> value) =>
-                $0.CreateSFMCMessageRequest.fromBuffer(value),
-            ($0.MessageReply value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.CreateMessageRequest, $0.MessageReply>(
         'HandleAPIMessage',
         handleAPIMessage_Pre,
@@ -109,15 +88,14 @@ abstract class MessageServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.CreateMessageRequest.fromBuffer(value),
         ($0.MessageReply value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.CreateMessagesRequest,
-            $0.HandleAPIMessagesReply>(
+    $addMethod($grpc.ServiceMethod<$0.CreateMessagesRequest, $0.MessageReply>(
         'HandleAPIMessages',
         handleAPIMessages_Pre,
         false,
         false,
         ($core.List<$core.int> value) =>
             $0.CreateMessagesRequest.fromBuffer(value),
-        ($0.HandleAPIMessagesReply value) => value.writeToBuffer()));
+        ($0.MessageReply value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.DeleteMessageRequest, $0.MessageReply>(
         'DeleteMessage',
         deleteMessage_Pre,
@@ -146,18 +124,12 @@ abstract class MessageServiceBase extends $grpc.Service {
             ($0.MessageReply value) => value.writeToBuffer()));
   }
 
-  $async.Future<$0.MessageReply> handleSFMCMessage_Pre($grpc.ServiceCall call,
-      $async.Future<$0.CreateSFMCMessageRequest> request) async {
-    return handleSFMCMessage(call, await request);
-  }
-
   $async.Future<$0.MessageReply> handleAPIMessage_Pre($grpc.ServiceCall call,
       $async.Future<$0.CreateMessageRequest> request) async {
     return handleAPIMessage(call, await request);
   }
 
-  $async.Future<$0.HandleAPIMessagesReply> handleAPIMessages_Pre(
-      $grpc.ServiceCall call,
+  $async.Future<$0.MessageReply> handleAPIMessages_Pre($grpc.ServiceCall call,
       $async.Future<$0.CreateMessagesRequest> request) async {
     return handleAPIMessages(call, await request);
   }
@@ -177,11 +149,9 @@ abstract class MessageServiceBase extends $grpc.Service {
     return openMessages(call, await request);
   }
 
-  $async.Future<$0.MessageReply> handleSFMCMessage(
-      $grpc.ServiceCall call, $0.CreateSFMCMessageRequest request);
   $async.Future<$0.MessageReply> handleAPIMessage(
       $grpc.ServiceCall call, $0.CreateMessageRequest request);
-  $async.Future<$0.HandleAPIMessagesReply> handleAPIMessages(
+  $async.Future<$0.MessageReply> handleAPIMessages(
       $grpc.ServiceCall call, $0.CreateMessagesRequest request);
   $async.Future<$0.MessageReply> deleteMessage(
       $grpc.ServiceCall call, $0.DeleteMessageRequest request);
