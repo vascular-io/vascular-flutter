@@ -20,7 +20,7 @@ $ flutter pub get
 3. Import vascular into your project:
 
 ```
-import 'package:vascular_flutter/vascular.dart';
+import 'package:vascular_flutter/vascular_flutter.dart';
 ```
 
 #### Example Usage
