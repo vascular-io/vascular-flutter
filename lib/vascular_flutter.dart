@@ -21,7 +21,7 @@ class Vascular {
     'api.vascular.io',
     port: 50051,
     options: ChannelOptions(
-      credentials: ChannelCredentials.insecure(),
+      credentials: ChannelCredentials.secure(),
       codecRegistry:
           CodecRegistry(codecs: const [GzipCodec(), IdentityCodec()]),
     ),
