@@ -18,3 +18,7 @@
 ## [0.0.5] - 21 Feb 2022.
 
 - Fix service connection.
+
+## [0.0.6] - 21 Feb 2022.
+
+- Fix nullbility.

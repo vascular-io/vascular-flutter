@@ -12,13 +12,15 @@ Vascular initializeApp(String appKey, String userId) {
   return inbox;
 }
 
+Next _next = Next()..uuid = "";
+
 class Vascular {
   String _apiKey;
   String _userId;
-  Next _next;
+  
 
   final channel = ClientChannel(
-    'api.vascular.io',
+    "api.vascular.io",
     port: 50051,
     options: ChannelOptions(
       credentials: ChannelCredentials.secure(),
@@ -29,11 +31,9 @@ class Vascular {
 
   Vascular(this._apiKey, this._userId);
 
-
-
-  Future<CreateUserReply> CreateUser({String userId}) async {
+  Future<CreateUserReply> CreateUser({String userId = ""}) async {
     var usrId = userId;
-    if (userId == "" || userId == null) {
+    if (userId == "") {
       usrId = _userId;
     }
     final stub = UserClient(channel);
@@ -42,16 +42,15 @@ class Vascular {
       ..appKey = _apiKey;
     try {
       final user = await stub.createUser(request);
-      await channel.shutdown();
       return user;
     } catch (e) {
       throw("Error calling CreateUser: $e");
     }
   }
 
-  Future<GetUserReply> GetUser({String userId}) async {
+  Future<GetUserReply> GetUser({String userId = ""}) async {
     var usrId = userId;
-    if (userId == "" || userId == null) {
+    if (userId == "") {
       usrId = _userId;
     }
     final stub = UserClient(channel);
@@ -60,7 +59,6 @@ class Vascular {
       ..appKey = _apiKey;
     try {
       final user = await stub.getUser(request);
-      await channel.shutdown();
       return user;
     } catch (e) {
       throw("Error calling GetUserRequest: $e");
@@ -82,8 +80,8 @@ class Vascular {
     }
   }
 
-  Future<GetInboxMessagesReply> InboxNext() async {
-    if (_next == null) {
+  Future<GetInboxMessagesReply?> InboxNext() async {
+    if (_next.uuid == "") {
       return null;
     }
     final stub = InboxClient(channel);
@@ -93,8 +91,8 @@ class Vascular {
       ..next = _next;
     try {
       final msgs = await stub.getInboxMessages(request);
-      if (msgs.next.uuid == '' || msgs.next.uuid == null) {
-        _next = null;
+      if (msgs.next.uuid == "") {
+        _next = Next()..uuid = "";
       } else {
         _next = msgs.next;
       }
@@ -159,7 +157,6 @@ class Vascular {
       ..names.addAll(tags);
     try {
       var response = await stub.addTags(request);
-      await channel.shutdown();
       print('Vascular SDK received: ${response}');
       return response.status;
     } catch (e) {
@@ -187,7 +184,6 @@ class Vascular {
     ..uuids.addAll(uuids);
     try {
       var response = await stub.deleteTags(request);
-      await channel.shutdown();
       print('Vascular SDK received: ${response}');
       return response.status;
     } catch (e) {
