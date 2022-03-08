@@ -3,9 +3,10 @@
 //  source: inbox.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
+// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
 
 import 'dart:core' as $core;
+import 'dart:convert' as $convert;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
@@ -41,7 +42,7 @@ class GetInboxMessagesRequest extends $pb.GeneratedMessage {
     return _result;
   }
   factory GetInboxMessagesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetInboxMessagesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  factory GetInboxMessagesRequest.fromJson($core.String json) => GetInboxMessagesRequest.create()..mergeFromProto3Json($convert.jsonDecode(json));
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -137,7 +138,7 @@ class CreateInboxMessagesRequest extends $pb.GeneratedMessage {
     return _result;
   }
   factory CreateInboxMessagesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory CreateInboxMessagesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  factory CreateInboxMessagesRequest.fromJson($core.String json) => CreateInboxMessagesRequest.create()..mergeFromProto3Json($convert.jsonDecode(json));
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -240,7 +241,7 @@ class GetInboxMessagesReply extends $pb.GeneratedMessage {
     return _result;
   }
   factory GetInboxMessagesReply.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetInboxMessagesReply.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  factory GetInboxMessagesReply.fromJson($core.String json) => GetInboxMessagesReply.create()..mergeFromProto3Json($convert.jsonDecode(json));
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -307,7 +308,7 @@ class CreateInboxMessagesReply extends $pb.GeneratedMessage {
     return _result;
   }
   factory CreateInboxMessagesReply.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory CreateInboxMessagesReply.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  factory CreateInboxMessagesReply.fromJson($core.String json) => CreateInboxMessagesReply.create()..mergeFromProto3Json($convert.jsonDecode(json));
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -379,7 +380,7 @@ class InboxMessage extends $pb.GeneratedMessage {
     return _result;
   }
   factory InboxMessage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory InboxMessage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  factory InboxMessage.fromJson($core.String json) => InboxMessage.create()..mergeFromProto3Json($convert.jsonDecode(json));
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -476,7 +477,7 @@ class Next extends $pb.GeneratedMessage {
     return _result;
   }
   factory Next.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Next.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  factory Next.fromJson($core.String json) => Next.create()..mergeFromProto3Json($convert.jsonDecode(json));
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '

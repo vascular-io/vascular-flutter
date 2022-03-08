@@ -22,3 +22,7 @@
 ## [0.0.6] - 21 Feb 2022.
 
 - Fix nullbility.
+
+## [0.0.7] - 08 Mar 2022.
+
+- Add working toJson.
