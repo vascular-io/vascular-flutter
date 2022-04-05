@@ -103,10 +103,10 @@ final vascular = initializeApp(
 final inbox = await vascular.Inbox();
 
 // When multi languages
-final messageEn = inbox.messages[0].message["enUs"];
+final messageEn = inbox.messages[0].message[Language.enUs.name];
 print(messagesEn?.title);
 
-final messageNb = inbox.messages[0].message["nb"];
+final messageNb = inbox.messages[0].message[Language.nb.name];
 print(messageNb?.title);
 
 // When a single language
