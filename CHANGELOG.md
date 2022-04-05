@@ -26,3 +26,8 @@
 ## [0.0.7] - 08 Mar 2022.
 
 - Add working toJson.
+
+## [0.0.8] - 05 Apr 2022.
+
+- Get inbox messages by languages
+- Restructure message model

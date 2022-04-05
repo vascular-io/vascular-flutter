@@ -3,7 +3,7 @@
 //  source: inbox.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,deprecated_member_use_from_same_package,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields,deprecated_member_use_from_same_package
 
 import 'dart:core' as $core;
 import 'dart:convert' as $convert;
@@ -16,11 +16,12 @@ const GetInboxMessagesRequest$json = const {
     const {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
     const {'1': 'hw_id', '3': 3, '4': 1, '5': 9, '10': 'hwId'},
     const {'1': 'next', '3': 4, '4': 1, '5': 11, '6': '.vascularinbox.inbox.Next', '10': 'next'},
+    const {'1': 'langauges', '3': 5, '4': 3, '5': 14, '6': '.vascularinbox.message.Language', '10': 'langauges'},
   ],
 };
 
 /// Descriptor for `GetInboxMessagesRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getInboxMessagesRequestDescriptor = $convert.base64Decode('ChdHZXRJbmJveE1lc3NhZ2VzUmVxdWVzdBIXCgdhcHBfa2V5GAEgASgJUgZhcHBLZXkSFwoHdXNlcl9pZBgCIAEoCVIGdXNlcklkEhMKBWh3X2lkGAMgASgJUgRod0lkEi0KBG5leHQYBCABKAsyGS52YXNjdWxhcmluYm94LmluYm94Lk5leHRSBG5leHQ=');
+final $typed_data.Uint8List getInboxMessagesRequestDescriptor = $convert.base64Decode('ChdHZXRJbmJveE1lc3NhZ2VzUmVxdWVzdBIXCgdhcHBfa2V5GAEgASgJUgZhcHBLZXkSFwoHdXNlcl9pZBgCIAEoCVIGdXNlcklkEhMKBWh3X2lkGAMgASgJUgRod0lkEi0KBG5leHQYBCABKAsyGS52YXNjdWxhcmluYm94LmluYm94Lk5leHRSBG5leHQSPQoJbGFuZ2F1Z2VzGAUgAygOMh8udmFzY3VsYXJpbmJveC5tZXNzYWdlLkxhbmd1YWdlUglsYW5nYXVnZXM=');
 @$core.Deprecated('Use createInboxMessagesRequestDescriptor instead')
 const CreateInboxMessagesRequest$json = const {
   '1': 'CreateInboxMessagesRequest',
@@ -39,7 +40,7 @@ final $typed_data.Uint8List createInboxMessagesRequestDescriptor = $convert.base
 const GetInboxMessagesReply$json = const {
   '1': 'GetInboxMessagesReply',
   '2': const [
-    const {'1': 'messages', '3': 1, '4': 3, '5': 11, '6': '.vascularinbox.inbox.InboxMessage', '10': 'messages'},
+    const {'1': 'messages', '3': 1, '4': 3, '5': 11, '6': '.vascularinbox.message.InboxMessage', '10': 'messages'},
     const {'1': 'new_messages_ids', '3': 2, '4': 3, '5': 9, '10': 'newMessagesIds'},
     const {'1': 'read_messages_ids', '3': 3, '4': 3, '5': 9, '10': 'readMessagesIds'},
     const {'1': 'next', '3': 4, '4': 1, '5': 11, '6': '.vascularinbox.inbox.Next', '10': 'next'},
@@ -48,7 +49,7 @@ const GetInboxMessagesReply$json = const {
 };
 
 /// Descriptor for `GetInboxMessagesReply`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getInboxMessagesReplyDescriptor = $convert.base64Decode('ChVHZXRJbmJveE1lc3NhZ2VzUmVwbHkSPQoIbWVzc2FnZXMYASADKAsyIS52YXNjdWxhcmluYm94LmluYm94LkluYm94TWVzc2FnZVIIbWVzc2FnZXMSKAoQbmV3X21lc3NhZ2VzX2lkcxgCIAMoCVIObmV3TWVzc2FnZXNJZHMSKgoRcmVhZF9tZXNzYWdlc19pZHMYAyADKAlSD3JlYWRNZXNzYWdlc0lkcxItCgRuZXh0GAQgASgLMhkudmFzY3VsYXJpbmJveC5pbmJveC5OZXh0UgRuZXh0EhsKCW5ld19pbmJveBgFIAEoBVIIbmV3SW5ib3g=');
+final $typed_data.Uint8List getInboxMessagesReplyDescriptor = $convert.base64Decode('ChVHZXRJbmJveE1lc3NhZ2VzUmVwbHkSPwoIbWVzc2FnZXMYASADKAsyIy52YXNjdWxhcmluYm94Lm1lc3NhZ2UuSW5ib3hNZXNzYWdlUghtZXNzYWdlcxIoChBuZXdfbWVzc2FnZXNfaWRzGAIgAygJUg5uZXdNZXNzYWdlc0lkcxIqChFyZWFkX21lc3NhZ2VzX2lkcxgDIAMoCVIPcmVhZE1lc3NhZ2VzSWRzEi0KBG5leHQYBCABKAsyGS52YXNjdWxhcmluYm94LmluYm94Lk5leHRSBG5leHQSGwoJbmV3X2luYm94GAUgASgFUghuZXdJbmJveA==');
 @$core.Deprecated('Use createInboxMessagesReplyDescriptor instead')
 const CreateInboxMessagesReply$json = const {
   '1': 'CreateInboxMessagesReply',
@@ -59,21 +60,6 @@ const CreateInboxMessagesReply$json = const {
 
 /// Descriptor for `CreateInboxMessagesReply`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List createInboxMessagesReplyDescriptor = $convert.base64Decode('ChhDcmVhdGVJbmJveE1lc3NhZ2VzUmVwbHkSGQoIaW5ib3hfaWQYASABKAlSB2luYm94SWQ=');
-@$core.Deprecated('Use inboxMessageDescriptor instead')
-const InboxMessage$json = const {
-  '1': 'InboxMessage',
-  '2': const [
-    const {'1': 'uuid', '3': 1, '4': 1, '5': 9, '10': 'uuid'},
-    const {'1': 'status', '3': 2, '4': 1, '5': 5, '10': 'status'},
-    const {'1': 'message', '3': 3, '4': 1, '5': 9, '10': 'message'},
-    const {'1': 'provider', '3': 4, '4': 1, '5': 9, '10': 'provider'},
-    const {'1': 'created_at', '3': 5, '4': 1, '5': 9, '10': 'createdAt'},
-    const {'1': 'expdate', '3': 6, '4': 1, '5': 9, '10': 'expdate'},
-  ],
-};
-
-/// Descriptor for `InboxMessage`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List inboxMessageDescriptor = $convert.base64Decode('CgxJbmJveE1lc3NhZ2USEgoEdXVpZBgBIAEoCVIEdXVpZBIWCgZzdGF0dXMYAiABKAVSBnN0YXR1cxIYCgdtZXNzYWdlGAMgASgJUgdtZXNzYWdlEhoKCHByb3ZpZGVyGAQgASgJUghwcm92aWRlchIdCgpjcmVhdGVkX2F0GAUgASgJUgljcmVhdGVkQXQSGAoHZXhwZGF0ZRgGIAEoCVIHZXhwZGF0ZQ==');
 @$core.Deprecated('Use nextDescriptor instead')
 const Next$json = const {
   '1': 'Next',
