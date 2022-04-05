@@ -40,7 +40,6 @@ vascular.CreateUser();
 final inbox = await vascular.Inbox();
 
 // Next inbox (pagination)
-
 final inbox = await vascular.InboxNext();
 
 // Read
@@ -60,8 +59,6 @@ vascular.DeleteTags(["music", "sport"]);
 
 // List Tags
 vascular.Tags();
-
-
 
 List<InboxMessage> messages = inbox.messages;
 
@@ -96,4 +93,24 @@ Widget build(BuildContext context) {
         )
     );
 }
+```
+###### Working with languages
+
+```
+final vascular = initializeApp(
+    APP_KEY, USER_ID, [Language.enUs]);
+
+final inbox = await vascular.Inbox();
+
+// When multi languages
+final messageEn = inbox.messages[0].message["enUs"];
+print(messagesEn?.title);
+
+final messageNb = inbox.messages[0].message["nb"];
+print(messageNb?.title);
+
+// When a single language
+final message = vascular.GetMessage(inbox.messages[0].message);
+print(message.title);
+
 ```
