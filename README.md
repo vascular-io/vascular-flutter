@@ -98,7 +98,7 @@ Widget build(BuildContext context) {
 
 ```
 final vascular = initializeApp(
-    APP_KEY, USER_ID, [Language.enUs]);
+    APP_KEY, USER_ID, [Language.enUs, Language.nb]);
 
 final inbox = await vascular.Inbox();
 
