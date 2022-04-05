@@ -3,10 +3,9 @@
 //  source: tag.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
 
 import 'dart:core' as $core;
-import 'dart:convert' as $convert;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
@@ -37,7 +36,7 @@ class AddTagsRequest extends $pb.GeneratedMessage {
     return _result;
   }
   factory AddTagsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory AddTagsRequest.fromJson($core.String json) => AddTagsRequest.create()..mergeFromProto3Json($convert.jsonDecode(json));
+  factory AddTagsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -106,7 +105,7 @@ class DeleteTagsRequest extends $pb.GeneratedMessage {
     return _result;
   }
   factory DeleteTagsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory DeleteTagsRequest.fromJson($core.String json) => DeleteTagsRequest.create()..mergeFromProto3Json($convert.jsonDecode(json));
+  factory DeleteTagsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -170,7 +169,7 @@ class GetUserTagsRequest extends $pb.GeneratedMessage {
     return _result;
   }
   factory GetUserTagsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetUserTagsRequest.fromJson($core.String json) => GetUserTagsRequest.create()..mergeFromProto3Json($convert.jsonDecode(json));
+  factory GetUserTagsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -226,7 +225,7 @@ class TagsReply extends $pb.GeneratedMessage {
     return _result;
   }
   factory TagsReply.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory TagsReply.fromJson($core.String json) => TagsReply.create()..mergeFromProto3Json($convert.jsonDecode(json));
+  factory TagsReply.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -273,7 +272,7 @@ class GetUserTagsReply extends $pb.GeneratedMessage {
     return _result;
   }
   factory GetUserTagsReply.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetUserTagsReply.fromJson($core.String json) => GetUserTagsReply.create()..mergeFromProto3Json($convert.jsonDecode(json));
+  factory GetUserTagsReply.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -324,7 +323,7 @@ class TagData extends $pb.GeneratedMessage {
     return _result;
   }
   factory TagData.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory TagData.fromJson($core.String json) => TagData.create()..mergeFromProto3Json($convert.jsonDecode(json));
+  factory TagData.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
