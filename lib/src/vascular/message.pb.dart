@@ -427,6 +427,81 @@ class DeleteMessageRequest extends $pb.GeneratedMessage {
   SFMC ensureSfmc() => $_ensure(3);
 }
 
+class GetMessageByIdRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetMessageByIdRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'vascularinbox.message'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'appKey')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'messageId')
+    ..hasRequiredFields = false
+  ;
+
+  GetMessageByIdRequest._() : super();
+  factory GetMessageByIdRequest({
+    $core.String? appKey,
+    $core.String? userId,
+    $core.String? messageId,
+  }) {
+    final _result = create();
+    if (appKey != null) {
+      _result.appKey = appKey;
+    }
+    if (userId != null) {
+      _result.userId = userId;
+    }
+    if (messageId != null) {
+      _result.messageId = messageId;
+    }
+    return _result;
+  }
+  factory GetMessageByIdRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetMessageByIdRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetMessageByIdRequest clone() => GetMessageByIdRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetMessageByIdRequest copyWith(void Function(GetMessageByIdRequest) updates) => super.copyWith((message) => updates(message as GetMessageByIdRequest)) as GetMessageByIdRequest; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static GetMessageByIdRequest create() => GetMessageByIdRequest._();
+  GetMessageByIdRequest createEmptyInstance() => create();
+  static $pb.PbList<GetMessageByIdRequest> createRepeated() => $pb.PbList<GetMessageByIdRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetMessageByIdRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetMessageByIdRequest>(create);
+  static GetMessageByIdRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get appKey => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set appKey($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasAppKey() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAppKey() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get messageId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set messageId($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasMessageId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMessageId() => clearField(3);
+}
+
 class MessageReply extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'MessageReply', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'vascularinbox.message'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'status')

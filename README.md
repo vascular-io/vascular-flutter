@@ -8,7 +8,7 @@ The Vascular Flutter plugin allows using Vascular's native iOS and Android APIs 
 
 ```
 dependencies:
-  vascular_flutter: ^0.0.8
+  vascular_flutter: ^0.0.9
 ```
 
 2. Install your flutter package dependencies by running the following in the command line at your project's root directory:
@@ -41,6 +41,9 @@ final inbox = await vascular.Inbox();
 
 // Next inbox (pagination)
 final inbox = await vascular.InboxNext();
+
+// Get message by ID
+final message = await vascular.GetMessageById(inbox.messages[0].uuid);
 
 // Read
 vascular.ReadMessages(inbox.newMessagesIds);
@@ -113,4 +116,66 @@ print(messageNb?.title);
 final message = vascular.GetMessage(inbox.messages[0].message);
 print(message.title);
 
+```
+
+###### Inbox data structure
+```
+{
+    messages: [INBOX-MESSAGE]
+    newMessagesIds: [STRING],
+    readMessagesIds: [STRING],
+    next: {
+      createdAt: TIMESTAMP
+      uuid: STRING
+    },
+    newInbox: INTEGER
+}
+```
+
+###### Inbox message data structure
+```
+{
+   "uuid": STRING,
+   "status": INTEGER,
+   "message":{
+      "enUs":{
+         "title": STRING,
+         "body": STRING,
+         "media":{
+            "thumbnail": STRING,
+            "image": STRING"
+         },
+         "actions":{
+            "name": STRING,
+            "value": STRING
+         },
+         "metadata":{
+            "meta": STRING
+         },
+         "subTitle": STRING
+         "language": LANGUAGE-ENUM
+      }
+   },
+   "provider": PROVIDER-ENUM,
+   "createdAt": STRING,
+   "expdate": STRING
+}
+```
+
+###### LANGUAGE-ENUM
+```
+{
+    enUs
+    enUk
+    nb
+}
+```
+
+###### PROVIDER-ENUM
+```
+{
+    api
+    sfmc
+    dashboard
+}
 ```

@@ -223,6 +223,22 @@ class Vascular {
     }
   }
 
+  Future<InboxMessage> GetMessageById(String messagesId) async {
+    final stub = MessageClient(channel);
+    final request = GetMessageByIdRequest()
+      ..appKey = _apiKey
+      ..userId = _userId
+      ..messageId = messagesId;
+    try {
+      final message = await stub.getMessageById(request);
+      return message;
+    } catch (e) {
+      final grpcError = e as GrpcError;
+      final errorMessage = grpcError.message;
+      throw ("Error calling GetMessageById: $errorMessage");
+    }
+  }
+
   MessageData GetMessage(Map<String, MessageData> message) {
     final key = message.keys.elementAt(0);
     return message.remove(key) as MessageData;
