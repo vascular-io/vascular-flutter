@@ -32,6 +32,6 @@
 - Get inbox messages by languages.
 - Restructure message model.
 
-## [0.0.9] - 05 Apr 2022.
+## [0.0.9] - 19 Apr 2022.
 
 - Get inbox message by message id.
