@@ -102,6 +102,18 @@ const DeleteMessageRequest$json = const {
 
 /// Descriptor for `DeleteMessageRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List deleteMessageRequestDescriptor = $convert.base64Decode('ChREZWxldGVNZXNzYWdlUmVxdWVzdBIXCgdhcHBfa2V5GAEgASgJUgZhcHBLZXkSFwoHdXNlcl9pZBgCIAEoCVIGdXNlcklkEh0KCm1lc3NhZ2VfaWQYAyABKAlSCW1lc3NhZ2VJZBI0CgRzZm1jGAQgASgLMhsudmFzY3VsYXJpbmJveC5tZXNzYWdlLlNGTUNIAFIEc2ZtY4gBAUIHCgVfc2ZtYw==');
+@$core.Deprecated('Use getMessageByIdRequestDescriptor instead')
+const GetMessageByIdRequest$json = const {
+  '1': 'GetMessageByIdRequest',
+  '2': const [
+    const {'1': 'app_key', '3': 1, '4': 1, '5': 9, '10': 'appKey'},
+    const {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+    const {'1': 'message_id', '3': 3, '4': 1, '5': 9, '10': 'messageId'},
+  ],
+};
+
+/// Descriptor for `GetMessageByIdRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getMessageByIdRequestDescriptor = $convert.base64Decode('ChVHZXRNZXNzYWdlQnlJZFJlcXVlc3QSFwoHYXBwX2tleRgBIAEoCVIGYXBwS2V5EhcKB3VzZXJfaWQYAiABKAlSBnVzZXJJZBIdCgptZXNzYWdlX2lkGAMgASgJUgltZXNzYWdlSWQ=');
 @$core.Deprecated('Use messageReplyDescriptor instead')
 const MessageReply$json = const {
   '1': 'MessageReply',

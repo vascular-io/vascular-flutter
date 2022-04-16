@@ -39,6 +39,11 @@ class MessageClient extends $grpc.Client {
           '/vascularinbox.message.Message/OpenMessages',
           ($0.ChangeMessagesStateRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.MessageReply.fromBuffer(value));
+  static final _$getMessageById =
+      $grpc.ClientMethod<$0.GetMessageByIdRequest, $0.InboxMessage>(
+          '/vascularinbox.message.Message/GetMessageById',
+          ($0.GetMessageByIdRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) => $0.InboxMessage.fromBuffer(value));
 
   MessageClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -73,6 +78,12 @@ class MessageClient extends $grpc.Client {
       $0.ChangeMessagesStateRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$openMessages, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.InboxMessage> getMessageById(
+      $0.GetMessageByIdRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getMessageById, request, options: options);
   }
 }
 
@@ -122,6 +133,14 @@ abstract class MessageServiceBase extends $grpc.Service {
             ($core.List<$core.int> value) =>
                 $0.ChangeMessagesStateRequest.fromBuffer(value),
             ($0.MessageReply value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetMessageByIdRequest, $0.InboxMessage>(
+        'GetMessageById',
+        getMessageById_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetMessageByIdRequest.fromBuffer(value),
+        ($0.InboxMessage value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.MessageReply> handleAPIMessage_Pre($grpc.ServiceCall call,
@@ -149,6 +168,11 @@ abstract class MessageServiceBase extends $grpc.Service {
     return openMessages(call, await request);
   }
 
+  $async.Future<$0.InboxMessage> getMessageById_Pre($grpc.ServiceCall call,
+      $async.Future<$0.GetMessageByIdRequest> request) async {
+    return getMessageById(call, await request);
+  }
+
   $async.Future<$0.MessageReply> handleAPIMessage(
       $grpc.ServiceCall call, $0.CreateMessageRequest request);
   $async.Future<$0.MessageReply> handleAPIMessages(
@@ -159,4 +183,6 @@ abstract class MessageServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.ChangeMessagesStateRequest request);
   $async.Future<$0.MessageReply> openMessages(
       $grpc.ServiceCall call, $0.ChangeMessagesStateRequest request);
+  $async.Future<$0.InboxMessage> getMessageById(
+      $grpc.ServiceCall call, $0.GetMessageByIdRequest request);
 }
