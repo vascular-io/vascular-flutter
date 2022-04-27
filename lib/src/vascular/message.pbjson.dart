@@ -32,6 +32,19 @@ const Language$json = const {
 
 /// Descriptor for `Language`. Decode as a `google.protobuf.EnumDescriptorProto`.
 final $typed_data.Uint8List languageDescriptor = $convert.base64Decode('CghMYW5ndWFnZRIICgRlblVzEAASCAoEZW5VaxABEgYKAm5iEAI=');
+@$core.Deprecated('Use typeDescriptor instead')
+const Type$json = const {
+  '1': 'Type',
+  '2': const [
+    const {'1': 'info', '2': 0},
+    const {'1': 'campaign', '2': 1},
+    const {'1': 'payment', '2': 2},
+    const {'1': 'notification', '2': 3},
+  ],
+};
+
+/// Descriptor for `Type`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List typeDescriptor = $convert.base64Decode('CgRUeXBlEggKBGluZm8QABIMCghjYW1wYWlnbhABEgsKB3BheW1lbnQQAhIQCgxub3RpZmljYXRpb24QAw==');
 @$core.Deprecated('Use createMessageRequestDescriptor instead')
 const CreateMessageRequest$json = const {
   '1': 'CreateMessageRequest',
@@ -43,6 +56,7 @@ const CreateMessageRequest$json = const {
     const {'1': 'expdate', '3': 5, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '9': 0, '10': 'expdate', '17': true},
     const {'1': 'provider', '3': 6, '4': 1, '5': 14, '6': '.vascularinbox.message.Provider', '10': 'provider'},
     const {'1': 'sfmc', '3': 7, '4': 1, '5': 11, '6': '.vascularinbox.message.SFMC', '9': 1, '10': 'sfmc', '17': true},
+    const {'1': 'type', '3': 8, '4': 1, '5': 14, '6': '.vascularinbox.message.Type', '10': 'type'},
   ],
   '8': const [
     const {'1': '_expdate'},
@@ -51,7 +65,7 @@ const CreateMessageRequest$json = const {
 };
 
 /// Descriptor for `CreateMessageRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List createMessageRequestDescriptor = $convert.base64Decode('ChRDcmVhdGVNZXNzYWdlUmVxdWVzdBIXCgdhcHBfa2V5GAEgASgJUgZhcHBLZXkSFwoHYXBpX2tleRgCIAEoCVIGYXBpS2V5EhcKB3VzZXJfaWQYAyABKAlSBnVzZXJJZBI8CgdtZXNzYWdlGAQgAygLMiIudmFzY3VsYXJpbmJveC5tZXNzYWdlLk1lc3NhZ2VEYXRhUgdtZXNzYWdlEjkKB2V4cGRhdGUYBSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wSABSB2V4cGRhdGWIAQESOwoIcHJvdmlkZXIYBiABKA4yHy52YXNjdWxhcmluYm94Lm1lc3NhZ2UuUHJvdmlkZXJSCHByb3ZpZGVyEjQKBHNmbWMYByABKAsyGy52YXNjdWxhcmluYm94Lm1lc3NhZ2UuU0ZNQ0gBUgRzZm1jiAEBQgoKCF9leHBkYXRlQgcKBV9zZm1j');
+final $typed_data.Uint8List createMessageRequestDescriptor = $convert.base64Decode('ChRDcmVhdGVNZXNzYWdlUmVxdWVzdBIXCgdhcHBfa2V5GAEgASgJUgZhcHBLZXkSFwoHYXBpX2tleRgCIAEoCVIGYXBpS2V5EhcKB3VzZXJfaWQYAyABKAlSBnVzZXJJZBI8CgdtZXNzYWdlGAQgAygLMiIudmFzY3VsYXJpbmJveC5tZXNzYWdlLk1lc3NhZ2VEYXRhUgdtZXNzYWdlEjkKB2V4cGRhdGUYBSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wSABSB2V4cGRhdGWIAQESOwoIcHJvdmlkZXIYBiABKA4yHy52YXNjdWxhcmluYm94Lm1lc3NhZ2UuUHJvdmlkZXJSCHByb3ZpZGVyEjQKBHNmbWMYByABKAsyGy52YXNjdWxhcmluYm94Lm1lc3NhZ2UuU0ZNQ0gBUgRzZm1jiAEBEi8KBHR5cGUYCCABKA4yGy52YXNjdWxhcmluYm94Lm1lc3NhZ2UuVHlwZVIEdHlwZUIKCghfZXhwZGF0ZUIHCgVfc2ZtYw==');
 @$core.Deprecated('Use createMessagesRequestDescriptor instead')
 const CreateMessagesRequest$json = const {
   '1': 'CreateMessagesRequest',
@@ -62,6 +76,7 @@ const CreateMessagesRequest$json = const {
     const {'1': 'message', '3': 4, '4': 3, '5': 11, '6': '.vascularinbox.message.MessageData', '10': 'message'},
     const {'1': 'expdate', '3': 5, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '9': 0, '10': 'expdate', '17': true},
     const {'1': 'provider', '3': 6, '4': 1, '5': 14, '6': '.vascularinbox.message.Provider', '10': 'provider'},
+    const {'1': 'type', '3': 7, '4': 1, '5': 14, '6': '.vascularinbox.message.Type', '10': 'type'},
   ],
   '8': const [
     const {'1': '_expdate'},
@@ -69,7 +84,7 @@ const CreateMessagesRequest$json = const {
 };
 
 /// Descriptor for `CreateMessagesRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List createMessagesRequestDescriptor = $convert.base64Decode('ChVDcmVhdGVNZXNzYWdlc1JlcXVlc3QSFwoHYXBwX2tleRgBIAEoCVIGYXBwS2V5EhcKB2FwaV9rZXkYAiABKAlSBmFwaUtleRIZCgh1c2Vyc19pZBgDIAMoCVIHdXNlcnNJZBI8CgdtZXNzYWdlGAQgAygLMiIudmFzY3VsYXJpbmJveC5tZXNzYWdlLk1lc3NhZ2VEYXRhUgdtZXNzYWdlEjkKB2V4cGRhdGUYBSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wSABSB2V4cGRhdGWIAQESOwoIcHJvdmlkZXIYBiABKA4yHy52YXNjdWxhcmluYm94Lm1lc3NhZ2UuUHJvdmlkZXJSCHByb3ZpZGVyQgoKCF9leHBkYXRl');
+final $typed_data.Uint8List createMessagesRequestDescriptor = $convert.base64Decode('ChVDcmVhdGVNZXNzYWdlc1JlcXVlc3QSFwoHYXBwX2tleRgBIAEoCVIGYXBwS2V5EhcKB2FwaV9rZXkYAiABKAlSBmFwaUtleRIZCgh1c2Vyc19pZBgDIAMoCVIHdXNlcnNJZBI8CgdtZXNzYWdlGAQgAygLMiIudmFzY3VsYXJpbmJveC5tZXNzYWdlLk1lc3NhZ2VEYXRhUgdtZXNzYWdlEjkKB2V4cGRhdGUYBSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wSABSB2V4cGRhdGWIAQESOwoIcHJvdmlkZXIYBiABKA4yHy52YXNjdWxhcmluYm94Lm1lc3NhZ2UuUHJvdmlkZXJSCHByb3ZpZGVyEi8KBHR5cGUYByABKA4yGy52YXNjdWxhcmluYm94Lm1lc3NhZ2UuVHlwZVIEdHlwZUIKCghfZXhwZGF0ZQ==');
 @$core.Deprecated('Use changeMessagesStateRequestDescriptor instead')
 const ChangeMessagesStateRequest$json = const {
   '1': 'ChangeMessagesStateRequest',
@@ -134,6 +149,7 @@ const InboxMessage$json = const {
     const {'1': 'provider', '3': 4, '4': 1, '5': 9, '10': 'provider'},
     const {'1': 'created_at', '3': 5, '4': 1, '5': 9, '10': 'createdAt'},
     const {'1': 'expdate', '3': 6, '4': 1, '5': 9, '10': 'expdate'},
+    const {'1': 'type', '3': 7, '4': 1, '5': 9, '10': 'type'},
   ],
   '3': const [InboxMessage_MessageEntry$json],
 };
@@ -149,7 +165,7 @@ const InboxMessage_MessageEntry$json = const {
 };
 
 /// Descriptor for `InboxMessage`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List inboxMessageDescriptor = $convert.base64Decode('CgxJbmJveE1lc3NhZ2USEgoEdXVpZBgBIAEoCVIEdXVpZBIWCgZzdGF0dXMYAiABKAVSBnN0YXR1cxJKCgdtZXNzYWdlGAMgAygLMjAudmFzY3VsYXJpbmJveC5tZXNzYWdlLkluYm94TWVzc2FnZS5NZXNzYWdlRW50cnlSB21lc3NhZ2USGgoIcHJvdmlkZXIYBCABKAlSCHByb3ZpZGVyEh0KCmNyZWF0ZWRfYXQYBSABKAlSCWNyZWF0ZWRBdBIYCgdleHBkYXRlGAYgASgJUgdleHBkYXRlGl4KDE1lc3NhZ2VFbnRyeRIQCgNrZXkYASABKAlSA2tleRI4CgV2YWx1ZRgCIAEoCzIiLnZhc2N1bGFyaW5ib3gubWVzc2FnZS5NZXNzYWdlRGF0YVIFdmFsdWU6AjgB');
+final $typed_data.Uint8List inboxMessageDescriptor = $convert.base64Decode('CgxJbmJveE1lc3NhZ2USEgoEdXVpZBgBIAEoCVIEdXVpZBIWCgZzdGF0dXMYAiABKAVSBnN0YXR1cxJKCgdtZXNzYWdlGAMgAygLMjAudmFzY3VsYXJpbmJveC5tZXNzYWdlLkluYm94TWVzc2FnZS5NZXNzYWdlRW50cnlSB21lc3NhZ2USGgoIcHJvdmlkZXIYBCABKAlSCHByb3ZpZGVyEh0KCmNyZWF0ZWRfYXQYBSABKAlSCWNyZWF0ZWRBdBIYCgdleHBkYXRlGAYgASgJUgdleHBkYXRlEhIKBHR5cGUYByABKAlSBHR5cGUaXgoMTWVzc2FnZUVudHJ5EhAKA2tleRgBIAEoCVIDa2V5EjgKBXZhbHVlGAIgASgLMiIudmFzY3VsYXJpbmJveC5tZXNzYWdlLk1lc3NhZ2VEYXRhUgV2YWx1ZToCOAE=');
 @$core.Deprecated('Use messageDataDescriptor instead')
 const MessageData$json = const {
   '1': 'MessageData',
