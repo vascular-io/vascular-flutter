@@ -35,3 +35,7 @@
 ## [0.0.9] - 19 Apr 2022.
 
 - Get inbox message by message id.
+
+## [1.0.0] - 28 Apr 2022.
+
+- Add message type.

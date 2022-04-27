@@ -24,6 +24,7 @@ class CreateMessageRequest extends $pb.GeneratedMessage {
     ..aOM<$1.Timestamp>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'expdate', subBuilder: $1.Timestamp.create)
     ..e<Provider>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'provider', $pb.PbFieldType.OE, defaultOrMaker: Provider.api, valueOf: Provider.valueOf, enumValues: Provider.values)
     ..aOM<SFMC>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sfmc', subBuilder: SFMC.create)
+    ..e<Type>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: Type.info, valueOf: Type.valueOf, enumValues: Type.values)
     ..hasRequiredFields = false
   ;
 
@@ -36,6 +37,7 @@ class CreateMessageRequest extends $pb.GeneratedMessage {
     $1.Timestamp? expdate,
     Provider? provider,
     SFMC? sfmc,
+    Type? type,
   }) {
     final _result = create();
     if (appKey != null) {
@@ -58,6 +60,9 @@ class CreateMessageRequest extends $pb.GeneratedMessage {
     }
     if (sfmc != null) {
       _result.sfmc = sfmc;
+    }
+    if (type != null) {
+      _result.type = type;
     }
     return _result;
   }
@@ -142,6 +147,15 @@ class CreateMessageRequest extends $pb.GeneratedMessage {
   void clearSfmc() => clearField(7);
   @$pb.TagNumber(7)
   SFMC ensureSfmc() => $_ensure(6);
+
+  @$pb.TagNumber(8)
+  Type get type => $_getN(7);
+  @$pb.TagNumber(8)
+  set type(Type v) { setField(8, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasType() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearType() => clearField(8);
 }
 
 class CreateMessagesRequest extends $pb.GeneratedMessage {
@@ -152,6 +166,7 @@ class CreateMessagesRequest extends $pb.GeneratedMessage {
     ..pc<MessageData>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'message', $pb.PbFieldType.PM, subBuilder: MessageData.create)
     ..aOM<$1.Timestamp>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'expdate', subBuilder: $1.Timestamp.create)
     ..e<Provider>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'provider', $pb.PbFieldType.OE, defaultOrMaker: Provider.api, valueOf: Provider.valueOf, enumValues: Provider.values)
+    ..e<Type>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: Type.info, valueOf: Type.valueOf, enumValues: Type.values)
     ..hasRequiredFields = false
   ;
 
@@ -163,6 +178,7 @@ class CreateMessagesRequest extends $pb.GeneratedMessage {
     $core.Iterable<MessageData>? message,
     $1.Timestamp? expdate,
     Provider? provider,
+    Type? type,
   }) {
     final _result = create();
     if (appKey != null) {
@@ -182,6 +198,9 @@ class CreateMessagesRequest extends $pb.GeneratedMessage {
     }
     if (provider != null) {
       _result.provider = provider;
+    }
+    if (type != null) {
+      _result.type = type;
     }
     return _result;
   }
@@ -249,6 +268,15 @@ class CreateMessagesRequest extends $pb.GeneratedMessage {
   $core.bool hasProvider() => $_has(5);
   @$pb.TagNumber(6)
   void clearProvider() => clearField(6);
+
+  @$pb.TagNumber(7)
+  Type get type => $_getN(6);
+  @$pb.TagNumber(7)
+  set type(Type v) { setField(7, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasType() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearType() => clearField(7);
 }
 
 class ChangeMessagesStateRequest extends $pb.GeneratedMessage {
@@ -557,6 +585,7 @@ class InboxMessage extends $pb.GeneratedMessage {
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'provider')
     ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdAt')
     ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'expdate')
+    ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'type')
     ..hasRequiredFields = false
   ;
 
@@ -568,6 +597,7 @@ class InboxMessage extends $pb.GeneratedMessage {
     $core.String? provider,
     $core.String? createdAt,
     $core.String? expdate,
+    $core.String? type,
   }) {
     final _result = create();
     if (uuid != null) {
@@ -587,6 +617,9 @@ class InboxMessage extends $pb.GeneratedMessage {
     }
     if (expdate != null) {
       _result.expdate = expdate;
+    }
+    if (type != null) {
+      _result.type = type;
     }
     return _result;
   }
@@ -658,6 +691,15 @@ class InboxMessage extends $pb.GeneratedMessage {
   $core.bool hasExpdate() => $_has(5);
   @$pb.TagNumber(6)
   void clearExpdate() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get type => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set type($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasType() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearType() => clearField(7);
 }
 
 class MessageData extends $pb.GeneratedMessage {

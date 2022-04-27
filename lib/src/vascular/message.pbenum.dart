@@ -43,3 +43,22 @@ class Language extends $pb.ProtobufEnum {
   const Language._($core.int v, $core.String n) : super(v, n);
 }
 
+class Type extends $pb.ProtobufEnum {
+  static const Type info = Type._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'info');
+  static const Type campaign = Type._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'campaign');
+  static const Type payment = Type._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'payment');
+  static const Type notification = Type._(3, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'notification');
+
+  static const $core.List<Type> values = <Type> [
+    info,
+    campaign,
+    payment,
+    notification,
+  ];
+
+  static final $core.Map<$core.int, Type> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static Type? valueOf($core.int value) => _byValue[value];
+
+  const Type._($core.int v, $core.String n) : super(v, n);
+}
+
