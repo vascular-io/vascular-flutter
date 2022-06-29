@@ -146,10 +146,10 @@ const InboxMessage$json = const {
     const {'1': 'uuid', '3': 1, '4': 1, '5': 9, '10': 'uuid'},
     const {'1': 'status', '3': 2, '4': 1, '5': 5, '10': 'status'},
     const {'1': 'message', '3': 3, '4': 3, '5': 11, '6': '.vascularinbox.message.InboxMessage.MessageEntry', '10': 'message'},
-    const {'1': 'provider', '3': 4, '4': 1, '5': 9, '10': 'provider'},
+    const {'1': 'provider', '3': 4, '4': 1, '5': 14, '6': '.vascularinbox.message.Provider', '10': 'provider'},
     const {'1': 'created_at', '3': 5, '4': 1, '5': 9, '10': 'createdAt'},
     const {'1': 'expdate', '3': 6, '4': 1, '5': 9, '10': 'expdate'},
-    const {'1': 'type', '3': 7, '4': 1, '5': 9, '10': 'type'},
+    const {'1': 'type', '3': 7, '4': 1, '5': 14, '6': '.vascularinbox.message.Type', '10': 'type'},
   ],
   '3': const [InboxMessage_MessageEntry$json],
 };
@@ -165,7 +165,7 @@ const InboxMessage_MessageEntry$json = const {
 };
 
 /// Descriptor for `InboxMessage`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List inboxMessageDescriptor = $convert.base64Decode('CgxJbmJveE1lc3NhZ2USEgoEdXVpZBgBIAEoCVIEdXVpZBIWCgZzdGF0dXMYAiABKAVSBnN0YXR1cxJKCgdtZXNzYWdlGAMgAygLMjAudmFzY3VsYXJpbmJveC5tZXNzYWdlLkluYm94TWVzc2FnZS5NZXNzYWdlRW50cnlSB21lc3NhZ2USGgoIcHJvdmlkZXIYBCABKAlSCHByb3ZpZGVyEh0KCmNyZWF0ZWRfYXQYBSABKAlSCWNyZWF0ZWRBdBIYCgdleHBkYXRlGAYgASgJUgdleHBkYXRlEhIKBHR5cGUYByABKAlSBHR5cGUaXgoMTWVzc2FnZUVudHJ5EhAKA2tleRgBIAEoCVIDa2V5EjgKBXZhbHVlGAIgASgLMiIudmFzY3VsYXJpbmJveC5tZXNzYWdlLk1lc3NhZ2VEYXRhUgV2YWx1ZToCOAE=');
+final $typed_data.Uint8List inboxMessageDescriptor = $convert.base64Decode('CgxJbmJveE1lc3NhZ2USEgoEdXVpZBgBIAEoCVIEdXVpZBIWCgZzdGF0dXMYAiABKAVSBnN0YXR1cxJKCgdtZXNzYWdlGAMgAygLMjAudmFzY3VsYXJpbmJveC5tZXNzYWdlLkluYm94TWVzc2FnZS5NZXNzYWdlRW50cnlSB21lc3NhZ2USOwoIcHJvdmlkZXIYBCABKA4yHy52YXNjdWxhcmluYm94Lm1lc3NhZ2UuUHJvdmlkZXJSCHByb3ZpZGVyEh0KCmNyZWF0ZWRfYXQYBSABKAlSCWNyZWF0ZWRBdBIYCgdleHBkYXRlGAYgASgJUgdleHBkYXRlEi8KBHR5cGUYByABKA4yGy52YXNjdWxhcmluYm94Lm1lc3NhZ2UuVHlwZVIEdHlwZRpeCgxNZXNzYWdlRW50cnkSEAoDa2V5GAEgASgJUgNrZXkSOAoFdmFsdWUYAiABKAsyIi52YXNjdWxhcmluYm94Lm1lc3NhZ2UuTWVzc2FnZURhdGFSBXZhbHVlOgI4AQ==');
 @$core.Deprecated('Use messageDataDescriptor instead')
 const MessageData$json = const {
   '1': 'MessageData',

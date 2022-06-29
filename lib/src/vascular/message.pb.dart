@@ -582,10 +582,10 @@ class InboxMessage extends $pb.GeneratedMessage {
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'uuid')
     ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'status', $pb.PbFieldType.O3)
     ..m<$core.String, MessageData>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'message', entryClassName: 'InboxMessage.MessageEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OM, valueCreator: MessageData.create, packageName: const $pb.PackageName('vascularinbox.message'))
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'provider')
+    ..e<Provider>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'provider', $pb.PbFieldType.OE, defaultOrMaker: Provider.api, valueOf: Provider.valueOf, enumValues: Provider.values)
     ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'createdAt')
     ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'expdate')
-    ..aOS(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'type')
+    ..e<Type>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: Type.info, valueOf: Type.valueOf, enumValues: Type.values)
     ..hasRequiredFields = false
   ;
 
@@ -594,10 +594,10 @@ class InboxMessage extends $pb.GeneratedMessage {
     $core.String? uuid,
     $core.int? status,
     $core.Map<$core.String, MessageData>? message,
-    $core.String? provider,
+    Provider? provider,
     $core.String? createdAt,
     $core.String? expdate,
-    $core.String? type,
+    Type? type,
   }) {
     final _result = create();
     if (uuid != null) {
@@ -666,9 +666,9 @@ class InboxMessage extends $pb.GeneratedMessage {
   $core.Map<$core.String, MessageData> get message => $_getMap(2);
 
   @$pb.TagNumber(4)
-  $core.String get provider => $_getSZ(3);
+  Provider get provider => $_getN(3);
   @$pb.TagNumber(4)
-  set provider($core.String v) { $_setString(3, v); }
+  set provider(Provider v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasProvider() => $_has(3);
   @$pb.TagNumber(4)
@@ -693,9 +693,9 @@ class InboxMessage extends $pb.GeneratedMessage {
   void clearExpdate() => clearField(6);
 
   @$pb.TagNumber(7)
-  $core.String get type => $_getSZ(6);
+  Type get type => $_getN(6);
   @$pb.TagNumber(7)
-  set type($core.String v) { $_setString(6, v); }
+  set type(Type v) { setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasType() => $_has(6);
   @$pb.TagNumber(7)
