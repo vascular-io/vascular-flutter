@@ -39,3 +39,7 @@
 ## [1.0.0] - 28 Apr 2022.
 
 - Add message type.
+
+## [2.0.0] - 29 Jun 2022.
+
+- Change message fields (type and provider) from string to enum.

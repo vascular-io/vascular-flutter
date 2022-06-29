@@ -8,7 +8,7 @@ The Vascular Flutter plugin allows using Vascular's native iOS and Android APIs 
 
 ```
 dependencies:
-  vascular_flutter: ^1.0.0
+  vascular_flutter: ^2.0.0
 ```
 
 2. Install your flutter package dependencies by running the following in the command line at your project's root directory:
