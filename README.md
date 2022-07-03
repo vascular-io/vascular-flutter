@@ -45,6 +45,9 @@ final inbox = await vascular.InboxNext();
 // Get message by ID
 final message = await vascular.GetMessageById(inbox.messages[0].uuid);
 
+// Retrive all messages with status delivered (new) count
+final deliveredMessagesCount = await vascular.GetDeliveredMessages();
+
 // Read
 vascular.ReadMessages(inbox.newMessagesIds);
 
