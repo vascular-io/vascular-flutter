@@ -3,7 +3,7 @@
 //  source: message.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields,deprecated_member_use_from_same_package
+// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,deprecated_member_use_from_same_package,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
 
 import 'dart:core' as $core;
 import 'dart:convert' as $convert;
@@ -129,6 +129,17 @@ const GetMessageByIdRequest$json = const {
 
 /// Descriptor for `GetMessageByIdRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getMessageByIdRequestDescriptor = $convert.base64Decode('ChVHZXRNZXNzYWdlQnlJZFJlcXVlc3QSFwoHYXBwX2tleRgBIAEoCVIGYXBwS2V5EhcKB3VzZXJfaWQYAiABKAlSBnVzZXJJZBIdCgptZXNzYWdlX2lkGAMgASgJUgltZXNzYWdlSWQ=');
+@$core.Deprecated('Use getDeliveredMessagesRequestDescriptor instead')
+const GetDeliveredMessagesRequest$json = const {
+  '1': 'GetDeliveredMessagesRequest',
+  '2': const [
+    const {'1': 'app_key', '3': 1, '4': 1, '5': 9, '10': 'appKey'},
+    const {'1': 'user_id', '3': 2, '4': 1, '5': 9, '10': 'userId'},
+  ],
+};
+
+/// Descriptor for `GetDeliveredMessagesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getDeliveredMessagesRequestDescriptor = $convert.base64Decode('ChtHZXREZWxpdmVyZWRNZXNzYWdlc1JlcXVlc3QSFwoHYXBwX2tleRgBIAEoCVIGYXBwS2V5EhcKB3VzZXJfaWQYAiABKAlSBnVzZXJJZA==');
 @$core.Deprecated('Use messageReplyDescriptor instead')
 const MessageReply$json = const {
   '1': 'MessageReply',
@@ -166,6 +177,16 @@ const InboxMessage_MessageEntry$json = const {
 
 /// Descriptor for `InboxMessage`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List inboxMessageDescriptor = $convert.base64Decode('CgxJbmJveE1lc3NhZ2USEgoEdXVpZBgBIAEoCVIEdXVpZBIWCgZzdGF0dXMYAiABKAVSBnN0YXR1cxJKCgdtZXNzYWdlGAMgAygLMjAudmFzY3VsYXJpbmJveC5tZXNzYWdlLkluYm94TWVzc2FnZS5NZXNzYWdlRW50cnlSB21lc3NhZ2USOwoIcHJvdmlkZXIYBCABKA4yHy52YXNjdWxhcmluYm94Lm1lc3NhZ2UuUHJvdmlkZXJSCHByb3ZpZGVyEh0KCmNyZWF0ZWRfYXQYBSABKAlSCWNyZWF0ZWRBdBIYCgdleHBkYXRlGAYgASgJUgdleHBkYXRlEi8KBHR5cGUYByABKA4yGy52YXNjdWxhcmluYm94Lm1lc3NhZ2UuVHlwZVIEdHlwZRpeCgxNZXNzYWdlRW50cnkSEAoDa2V5GAEgASgJUgNrZXkSOAoFdmFsdWUYAiABKAsyIi52YXNjdWxhcmluYm94Lm1lc3NhZ2UuTWVzc2FnZURhdGFSBXZhbHVlOgI4AQ==');
+@$core.Deprecated('Use getDeliveredMessagesReplyDescriptor instead')
+const GetDeliveredMessagesReply$json = const {
+  '1': 'GetDeliveredMessagesReply',
+  '2': const [
+    const {'1': 'count', '3': 1, '4': 1, '5': 3, '10': 'count'},
+  ],
+};
+
+/// Descriptor for `GetDeliveredMessagesReply`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getDeliveredMessagesReplyDescriptor = $convert.base64Decode('ChlHZXREZWxpdmVyZWRNZXNzYWdlc1JlcGx5EhQKBWNvdW50GAEgASgDUgVjb3VudA==');
 @$core.Deprecated('Use messageDataDescriptor instead')
 const MessageData$json = const {
   '1': 'MessageData',
