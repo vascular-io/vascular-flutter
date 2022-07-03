@@ -43,3 +43,7 @@
 ## [2.0.0] - 29 Jun 2022.
 
 - Change message fields (type and provider) from string to enum.
+
+## [2.1.0] - 04 Jul 2022.
+
+- Add delivered messages count.
