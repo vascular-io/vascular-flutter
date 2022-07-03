@@ -1,6 +1,7 @@
 export 'package:vascular_flutter/src/vascular/inbox.pb.dart';
 export 'package:vascular_flutter/src/vascular/message.pb.dart';
 
+import 'package:fixnum/fixnum.dart';
 import 'package:grpc/grpc.dart';
 import 'package:vascular_flutter/src/vascular/inbox.pbgrpc.dart';
 import 'package:vascular_flutter/src/vascular/message.pbgrpc.dart';
@@ -236,6 +237,21 @@ class Vascular {
       final grpcError = e as GrpcError;
       final errorMessage = grpcError.message;
       throw ("Error calling GetMessageById: $errorMessage");
+    }
+  }
+
+    Future<Int64> GetDeliveredMessages() async {
+    final stub = MessageClient(channel);
+    final request = GetDeliveredMessagesRequest()
+      ..appKey = _apiKey
+      ..userId = _userId;
+    try {
+      final getDeliveredMessagesReply = await stub.getDeliveredMessages(request);
+      return getDeliveredMessagesReply.count;
+    } catch (e) {
+      final grpcError = e as GrpcError;
+      final errorMessage = grpcError.message;
+      throw ("Error calling GetDeliveredMessages: $errorMessage");
     }
   }
 

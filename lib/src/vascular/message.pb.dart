@@ -3,10 +3,11 @@
 //  source: message.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
+// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
 
 import 'dart:core' as $core;
 
+import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import 'google/protobuf/timestamp.pb.dart' as $1;
@@ -530,6 +531,67 @@ class GetMessageByIdRequest extends $pb.GeneratedMessage {
   void clearMessageId() => clearField(3);
 }
 
+class GetDeliveredMessagesRequest extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetDeliveredMessagesRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'vascularinbox.message'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'appKey')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId')
+    ..hasRequiredFields = false
+  ;
+
+  GetDeliveredMessagesRequest._() : super();
+  factory GetDeliveredMessagesRequest({
+    $core.String? appKey,
+    $core.String? userId,
+  }) {
+    final _result = create();
+    if (appKey != null) {
+      _result.appKey = appKey;
+    }
+    if (userId != null) {
+      _result.userId = userId;
+    }
+    return _result;
+  }
+  factory GetDeliveredMessagesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetDeliveredMessagesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetDeliveredMessagesRequest clone() => GetDeliveredMessagesRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetDeliveredMessagesRequest copyWith(void Function(GetDeliveredMessagesRequest) updates) => super.copyWith((message) => updates(message as GetDeliveredMessagesRequest)) as GetDeliveredMessagesRequest; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static GetDeliveredMessagesRequest create() => GetDeliveredMessagesRequest._();
+  GetDeliveredMessagesRequest createEmptyInstance() => create();
+  static $pb.PbList<GetDeliveredMessagesRequest> createRepeated() => $pb.PbList<GetDeliveredMessagesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetDeliveredMessagesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetDeliveredMessagesRequest>(create);
+  static GetDeliveredMessagesRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get appKey => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set appKey($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasAppKey() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAppKey() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.String get userId => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set userId($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasUserId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearUserId() => clearField(2);
+}
+
 class MessageReply extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'MessageReply', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'vascularinbox.message'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'status')
@@ -700,6 +762,53 @@ class InboxMessage extends $pb.GeneratedMessage {
   $core.bool hasType() => $_has(6);
   @$pb.TagNumber(7)
   void clearType() => clearField(7);
+}
+
+class GetDeliveredMessagesReply extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetDeliveredMessagesReply', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'vascularinbox.message'), createEmptyInstance: create)
+    ..aInt64(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'count')
+    ..hasRequiredFields = false
+  ;
+
+  GetDeliveredMessagesReply._() : super();
+  factory GetDeliveredMessagesReply({
+    $fixnum.Int64? count,
+  }) {
+    final _result = create();
+    if (count != null) {
+      _result.count = count;
+    }
+    return _result;
+  }
+  factory GetDeliveredMessagesReply.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory GetDeliveredMessagesReply.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  GetDeliveredMessagesReply clone() => GetDeliveredMessagesReply()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  GetDeliveredMessagesReply copyWith(void Function(GetDeliveredMessagesReply) updates) => super.copyWith((message) => updates(message as GetDeliveredMessagesReply)) as GetDeliveredMessagesReply; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static GetDeliveredMessagesReply create() => GetDeliveredMessagesReply._();
+  GetDeliveredMessagesReply createEmptyInstance() => create();
+  static $pb.PbList<GetDeliveredMessagesReply> createRepeated() => $pb.PbList<GetDeliveredMessagesReply>();
+  @$core.pragma('dart2js:noInline')
+  static GetDeliveredMessagesReply getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetDeliveredMessagesReply>(create);
+  static GetDeliveredMessagesReply? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $fixnum.Int64 get count => $_getI64(0);
+  @$pb.TagNumber(1)
+  set count($fixnum.Int64 v) { $_setInt64(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasCount() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearCount() => clearField(1);
 }
 
 class MessageData extends $pb.GeneratedMessage {

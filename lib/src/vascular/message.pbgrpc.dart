@@ -3,7 +3,7 @@
 //  source: message.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
+// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
 
 import 'dart:async' as $async;
 
@@ -44,6 +44,12 @@ class MessageClient extends $grpc.Client {
           '/vascularinbox.message.Message/GetMessageById',
           ($0.GetMessageByIdRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) => $0.InboxMessage.fromBuffer(value));
+  static final _$getDeliveredMessages = $grpc.ClientMethod<
+          $0.GetDeliveredMessagesRequest, $0.GetDeliveredMessagesReply>(
+      '/vascularinbox.message.Message/GetDeliveredMessages',
+      ($0.GetDeliveredMessagesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $0.GetDeliveredMessagesReply.fromBuffer(value));
 
   MessageClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -84,6 +90,12 @@ class MessageClient extends $grpc.Client {
       $0.GetMessageByIdRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getMessageById, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.GetDeliveredMessagesReply> getDeliveredMessages(
+      $0.GetDeliveredMessagesRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$getDeliveredMessages, request, options: options);
   }
 }
 
@@ -141,6 +153,15 @@ abstract class MessageServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.GetMessageByIdRequest.fromBuffer(value),
         ($0.InboxMessage value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetDeliveredMessagesRequest,
+            $0.GetDeliveredMessagesReply>(
+        'GetDeliveredMessages',
+        getDeliveredMessages_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.GetDeliveredMessagesRequest.fromBuffer(value),
+        ($0.GetDeliveredMessagesReply value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.MessageReply> handleAPIMessage_Pre($grpc.ServiceCall call,
@@ -173,6 +194,12 @@ abstract class MessageServiceBase extends $grpc.Service {
     return getMessageById(call, await request);
   }
 
+  $async.Future<$0.GetDeliveredMessagesReply> getDeliveredMessages_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.GetDeliveredMessagesRequest> request) async {
+    return getDeliveredMessages(call, await request);
+  }
+
   $async.Future<$0.MessageReply> handleAPIMessage(
       $grpc.ServiceCall call, $0.CreateMessageRequest request);
   $async.Future<$0.MessageReply> handleAPIMessages(
@@ -185,4 +212,6 @@ abstract class MessageServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.ChangeMessagesStateRequest request);
   $async.Future<$0.InboxMessage> getMessageById(
       $grpc.ServiceCall call, $0.GetMessageByIdRequest request);
+  $async.Future<$0.GetDeliveredMessagesReply> getDeliveredMessages(
+      $grpc.ServiceCall call, $0.GetDeliveredMessagesRequest request);
 }
